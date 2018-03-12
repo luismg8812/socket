@@ -101,6 +101,9 @@ public class Conector {
 					}
 				
 					break;
+				case "6":
+					respuesta = cs.obtenerDatoGramera6(parts[1]);
+					break;
 				default:
 					System.out.println("no hay tipo de gramera asignado");
 					break;

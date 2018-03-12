@@ -382,4 +382,69 @@ public class ConsultarSerial {
 		System.out.println("valor: " + data);		
 		return data;
 	}
+	
+	
+		
+		@SuppressWarnings("unused")
+		public String obtenerDatoGramera6(String gramera) throws IOException {
+			Scanner sc = null;	
+			PrintStream ps;	
+			sc = new Scanner(sp.getInputStream());
+			ps = new PrintStream(sp.getOutputStream());
+			//if(gramera.equals("1")){
+				sc.close();
+				sc = null;
+				sc = new Scanner(sp.getInputStream());
+			//}	
+			while (!sc.hasNext()) {// se queda pegado mientras que no
+				// llegue nungun valor por el puerto
+				// serial
+					sc.close();
+					sc = null;
+					sc = new Scanner(sp.getInputStream());
+					//
+					//System.out.println("dato leido actual limp2"+sc.next());
+			}
+			System.out.println("primera busqueda");
+			String data = sc.next();
+			System.out.println("primer valor leido:" + data);
+			data = sc.next();
+			System.out.println("primer residuo"+data);
+			
+			try {
+				sc = new Scanner(sp.getInputStream());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			try {
+				ps = new PrintStream(sp.getOutputStream());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			while (!sc.hasNext()) {// se queda pegado mientras que no
+				// llegue nungun valor por el puerto
+				// serial
+				
+				try {
+					//sc.close();
+					//sc = null;
+					sc = new Scanner(sp.getInputStream());
+					//
+					//System.out.println("dato leido actual limp2"+sc.next());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+			System.out.println("lee el resultado");
+			
+				 //data = sc.next();
+			
+			sc.close();
+			sc = null;
+			System.out.println("valor: " + data);		
+			return data;
+		}
+		
 }
