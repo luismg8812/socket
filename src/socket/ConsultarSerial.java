@@ -408,7 +408,7 @@ public class ConsultarSerial {
 			System.out.println("primera busqueda");
 			String data = sc.next();
 			System.out.println("primer valor leido:" + data);
-			data = sc.next();
+			//data = sc.next();
 			System.out.println("primer residuo"+data);
 			
 			try {

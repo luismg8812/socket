@@ -50,7 +50,12 @@ public class Conector {
 					respuesta = cs.obtenerDato(parts[1]);
 					break;
 				case "2":
-					respuesta = cs.obtenerDato2(parts[1]);
+					try {
+						respuesta = cs.obtenerDato2(parts[1]);
+					} catch (Exception e) {
+						respuesta = "nulo";
+					}
+					
 					break;
 				case "3":
 					respuesta = cs.obtenerDatoGramera3(parts[1]);
@@ -102,6 +107,7 @@ public class Conector {
 				
 					break;
 				case "6":
+					respuesta = cs.obtenerDatoGramera6(parts[1]);
 					respuesta = cs.obtenerDatoGramera6(parts[1]);
 					break;
 				default:
